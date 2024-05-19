@@ -121,9 +121,13 @@ void MainWindow::setTrayIconEnabled(bool enable) {
 QMenu *MainWindow::createTrayMenu() {
 	auto menu = new QMenu{this};
 
-	auto show = new QAction{_("&Maximize TuxClocker"), this};
+	auto show = new QAction{_("&Show"), this};
 	connect(show, &QAction::triggered, this, &MainWindow::show);
 	menu->addAction(show);
+
+	auto hide = new QAction{_("&Hide"), this};
+	connect(hide, &QAction::triggered, this, &MainWindow::hide);
+	menu->addAction(hide);
 
 	auto quit = new QAction{_("&Quit"), this};
 	connect(quit, &QAction::triggered, this, &QApplication::quit);

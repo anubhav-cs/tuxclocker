@@ -19,6 +19,8 @@ int main(int argc, char **argv) {
 
 	MainWindow mw;
 	mw.show();
+	// Hide the window at startup
+	mw.hide();
 
 	return app.exec();
 }
